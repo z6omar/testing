@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>FINAL PROJECT - ZAHRA OMAR</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
@@ -17,87 +18,185 @@
         margin: 0 auto;
       }
 
+      /* ---------------- NAV ---------------- */
       #nav {
         position: sticky;
         top: 0;
-        font-family: "Be Vietnam Pro", sans-serif;
-        font-weight: 400;
-        font-size: 13px;
         background-color: #e4281f;
-        padding: 30px;
+        padding: 20px 30px;
         z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 13px;
       }
 
-      #nav ul {
-        list-style: none;
-        margin: 0;
+      /* LEFT LINKS */
+      .nav-left {
+        display: flex;
+        gap: 30px;
         padding: 0;
-        display: inline-block;
+        margin: 0;
+        list-style: none;
       }
 
-      #nav li {
-        display: inline-block;
-        margin-right: 30px;
-      }
-
-      #nav a {
+      .nav-left a {
         text-decoration: none;
         color: black;
       }
 
-      #nav a:hover {
+      .nav-left a:hover {
         color: white;
         font-weight: 700;
       }
 
-      .nav-logo {
-        position: relative;
-        float: right;
-        right: 300px;
-        bottom: 30px;
+      /* CENTER LOGO */
+      .nav-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
-        .cart-button {
+      .nav-center img {
+        display: block;
+      }
+
+      /* RIGHT BUTTONS */
+      .nav-right {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-left: auto;
+      }
+
+      .nav-right button {
+        position: relative;
+        top: -3px;
+      }
+
+      .cart-button,
+      .table-button {
         border: 2px solid black;
-        font-family: "poppins", sans-serif;
-        font-weight: 900;
         background-color: #fdedc9;
         padding: 10px 15px;
         border-radius: 30px;
-        text-align: center;
-        font-size: 10px;
-        margin: 4px 10px;
-        float: right;
-        position: relative;
-        display: inline-block;
-        box-shadow: 9px 9px black;
-        bottom: 20px;
-      }
-      
-        .table-button {
-        border: 2px solid black;
-        font-family: "poppins", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 900;
-        background-color: #fdedc9;
-        padding: 10px 15px;
-        border-radius: 30px;
-        text-align: center;
         font-size: 10px;
-        margin: 4px 2px;
-        float: right;
-        position: relative;
-        display: inline-block;
         box-shadow: 9px 9px black;
-        bottom: 20px;
+        cursor: pointer;
       }
 
-
-      .table-button:hover,
-      .cart-button:hover {
+      .cart-button:hover,
+      .table-button:hover {
         background-color: #1c6139;
         color: #fdedc9;
       }
+
+      /* ---------------- HERO (with image crop) ---------------- */
+      #hero {
+        position: relative;
+        width: 1200px;
+        height: 450px;
+        /* fixed height (image will crop) */
+        overflow: hidden;
+        /* hides extra parts */
+      }
+
+      #hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* crops image */
+        object-position: center;
+        display: block;
+      }
+
+      /* RECTANGLE OVERLAY */
+      .hero-box {
+        position: absolute;
+        top: 80px;
+        /* move box up/down */
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 800px;
+        height: 300px;
+        background-color: #fdedc9;
+        border-radius: 30px;
+        border: 3px solid black;
+        box-shadow: 12px 12px black;
+      }
+
+      /* TITLE INSIDE RECTANGLE */
+      .hero-title {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 60px;
+        margin: 0;
+      }
+
+      /* LINKS INSIDE RECTANGLE */
+      .hero-links {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      .hero-links a {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        text-decoration: none;
+        color: #000000;
+        margin: 0 25px;
+      }
+
+      .hero-links a:hover {
+        color: #e4281f;
+      }
+
+      h2 {
+        color: #1c6139;
+        font-family: "Poppins";
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 20px;
+      }
       
+      h3 {
+        font-family: "Be Vietnam Pro";
+        font-size: 25px;
+      }
+      
+      p {
+        font-family: "Be Vietnam Pro";
+        
+      }
+
+      /* ---------------- FOOTER ---------------- */
       footer {
         position: relative;
         background-color: #e4281f;
@@ -106,26 +205,21 @@
         font-family: "Be Vietnam Pro", sans-serif;
       }
 
-      /* left side: big logo */
       .footer-logo {
         display: inline-block;
         width: 30%;
-        /* takes about 1/3 of footer */
         vertical-align: top;
       }
 
-      /* right side: all the columns */
       .footer-columns {
         display: inline-block;
         width: 65%;
         vertical-align: top;
       }
 
-      /* each column: LOCATION / CONTACT / PRODUCTS / QUICK LINKS */
       .footer-column {
         display: inline-block;
         width: 23%;
-        /* 4 columns in a row */
         margin-right: 1%;
         vertical-align: top;
       }
@@ -172,10 +266,6 @@
         outline: none;
       }
 
-      .newsletter-input::placeholder {
-        color: black;
-      }
-
       .newsletter-button {
         position: absolute;
         background-color: #e4281f;
@@ -186,11 +276,11 @@
         height: 55px;
         border-radius: 50%;
         border: 3px solid black;
-        box-shadow: 10px 10px black;
+        box-shadow: 9px 9px black;
         font-family: "Be Vietnam Pro";
         font-weight: 700;
         font-size: 15px;
-
+        cursor: pointer;
       }
 
       .newsletter-button:hover {
@@ -198,12 +288,10 @@
         color: #fdedc9;
       }
 
-      /* SOCIAL ICONS ROW */
       .social-icon {
         position: absolute;
         right: 40px;
         bottom: 60px;
-
       }
     </style>
   </head>
@@ -212,38 +300,136 @@
 
     <!-- NAV -->
     <div id="nav">
-      <ul>
+      <ul class="nav-left">
         <li><a href="/">HOME</a></li>
         <li><a href="/">MENU</a></li>
         <li><a href="/">PRODUCTS</a></li>
         <li><a href="/">ABOUT</a></li>
       </ul>
-      <button class="table-button">RESERVE TABLE</button>
-      <button class="cart-button">CART</button>
-      <div class="nav-logo">
-        <img src="spicy-cartel-menu-logo.png" alt="horizontal spicy cartel logo in black">
+
+      <div class="nav-center">
+        <img src="spicy-cartel-menu-logo.png" alt="Spicy Cartel Logo">
+      </div>
+
+      <div class="nav-right">
+        <button class="cart-button">CART</button>
+        <button class="table-button">RESERVE TABLE</button>
       </div>
     </div>
 
+    <!-- HERO SECTION -->
+    <div id="hero">
+      <img src="menu-hero-photo.jpeg" alt="Hero Image">
 
+      <div class="hero-box">
+        <h1 class="hero-title">THE MENU</h1>
+        <div class="hero-links">
+          <a href="#tacos">TACOS</a>
+          <a href="#mains">MAINS</a>
+          <a href="#drinks">DRINKS</a>
+          <a href="#dessert">DESSERTS</a>
+        </div>
+      </div>
+    </div>
 
-  <img src="menu-hero-photo.jpg" alt="enchiladas, chips, dips, limes on plates sitting on a table" width="1200">
+    <!-- MENU -->
+    <!-- TACOS -->
+    <div id="tacos">
+      <h2>TACOS</h2>
+    </div>
 
+    <div class="container">
+      <!-- text LEFT, image RIGHT -->
+      <div class="grid-item">
+        <h3>Taco al Pastor</h3>
+        <p>Marinated pork, pineapple, cilantro, onion.</p>
 
+        <h3>Taco de Pollo</h3>
+        <p>Grilled chicken, lettuce, avocado crema.</p>
 
-    
-    
-    
-    
-    
+        <h3>Taco de Nopales</h3>
+        <p>Cactus, cheese, salsa verde. (vegetarian)</p>
+      </div>
+
+      <div class="grid-item">
+        <img src="taco-menu.jpg" alt="taco on a white plate in a with lime, onions, cheese, meat, lettuce, tomato on a white background">
+      </div>
+    </div>
+
+    <!-- MAINS -->
+    <div id="mains">
+      <h2>MAINS</h2>
+    </div>
+
+    <div class="container">
+      <!-- image LEFT, text RIGHT -->
+      <div class="grid-item">
+        <img src="main-menu.jpg" alt="beans, lettuce, onions, burrito, and tomato sauce on a plate in a white background">
+      </div>
+
+      <div class="grid-item">
+        <h3>Enchiladas Verdes</h3>
+        <p>Corn tortillas with shredded chicken, tomatillo sauce, cheese.</p>
+
+        <h3>Burrito Bowl</h3>
+        <p>Rice, beans, pico de gallo, guacamole, choice of protein.</p>
+
+        <h3>Chiles Rellenos</h3>
+        <p>Poblano peppers stuffed with cheese and tomato sauce.</p>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div id="drinks">
+      <h2>DRINKS</h2>
+    </div>
+
+    <div class="container">
+      <!-- text LEFT, image RIGHT -->
+      <div class="grid-item">
+        <h3>Rosa del Cielo</h3>
+        <p>A pink drink made with hibiscus, strawberry, and a splash of coconut water.</p>
+
+        <h3>Spicy Mango Tropical Drink</h3>
+        <p>A bright blend of mango, lime, and a touch of chili sugar. Sweet, refreshing, and slightly spicy.</p>
+
+        <h3>Verde Vital</h3>
+        <p>Refreshing green blend: lime, honeydew, mint, and a touch of aloe vera.</p>
+      </div>
+
+      <div class="grid-item">
+        <img src="drink-menu.jpg" alt="pink drink with strawberrys on top in a glass on a white background">
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div id="desserts">
+      <h2>DESSERTS</h2>
+    </div>
+
+    <div class="container">
+      <!-- image LEFT, text RIGHT -->
+      <div class="grid-item">
+        <img src="dessert-menu.jpg" alt="caramel custard on a white plate with brown sugar sauce and carrot shavings on top on a white background">
+      </div>
+
+      <div class="grid-item">
+        <h3>Fiesta Crunch Mix</h3>
+        <p>Crispy corn bites, toasted tortilla strips, chili-lime peanuts, and sweet mango chips tossed in our signature fuego seasoning. Hits with a mix of salty, spicy, and sweetness.</p>
+
+        <h3>Dulce de Sol</h3>
+        <p>A warm cinnamon-vanilla custard topped with caramelized orange zest and a sprinkle of chili sugar. Sweet, creamy, and lightly spiced.</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer>
-      <!-- LEFT: BIG LOGO -->
       <div class="footer-logo">
         <img src="spicy-cartel-main-logo.png" alt="Spicy Cartel logo" width="300">
       </div>
 
-      <!-- RIGHT: FOUR COLUMNS -->
       <div class="footer-columns">
+
         <div class="footer-column">
           <h4>LOCATION</h4>
           <p>218 Maple Crest Road</p>
@@ -271,16 +457,19 @@
           <a href="#">Cart</a><br>
           <a href="#">About</a>
         </div>
+
       </div>
 
-      <!-- NEWSLETTER -->
       <div class="footer-newsletter-title">JOIN OUR NEWSLETTER!</div>
 
       <div class="newsletter-box">
         <input class="newsletter-input" type="text" placeholder="enter your email...">
       </div>
+
       <button class="newsletter-button">GO</button>
-      <img class="social-icon" src="social-icons.png" alt="Facebook, Instagram, X logo" width="100">
+
+      <img class="social-icon" src="social-icons.png" alt="facebook instagram x logos" width="100">
     </footer>
+
   </body>
 </html>
