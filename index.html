@@ -32,13 +32,12 @@
         font-size: 13px;
       }
 
-      /* LEFT LINKS */
       .nav-left {
         display: flex;
         gap: 30px;
-        padding: 0;
-        margin: 0;
         list-style: none;
+        margin: 0;
+        padding: 0;
       }
 
       .nav-left a {
@@ -51,28 +50,17 @@
         font-weight: 700;
       }
 
-      /* CENTER LOGO */
       .nav-center {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
       }
 
-      .nav-center img {
-        display: block;
-      }
-
-      /* RIGHT BUTTONS */
       .nav-right {
         display: flex;
         gap: 12px;
         align-items: center;
         margin-left: auto;
-      }
-
-      .nav-right button {
-        position: relative;
-        top: -3px;
       }
 
       .cart-button,
@@ -94,33 +82,26 @@
         color: #fdedc9;
       }
 
-      /* ---------------- HERO (with image crop) ---------------- */
+      /* ---------------- HERO ---------------- */
       #hero {
         position: relative;
         width: 1200px;
         height: 450px;
-        /* fixed height (image will crop) */
         overflow: hidden;
-        /* hides extra parts */
       }
 
       #hero img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* crops image */
-        object-position: center;
-        display: block;
       }
 
-      /* RECTANGLE OVERLAY */
       .hero-box {
         position: absolute;
         top: 80px;
-        /* move box up/down */
         left: 0;
         right: 0;
-        margin: 0 auto;
+        margin: auto;
         width: 800px;
         height: 300px;
         background-color: #fdedc9;
@@ -129,33 +110,29 @@
         box-shadow: 12px 12px black;
       }
 
-      /* TITLE INSIDE RECTANGLE */
       .hero-title {
         position: absolute;
         top: 60px;
-        left: 0;
-        right: 0;
+        width: 100%;
         text-align: center;
         font-family: "Poppins", sans-serif;
         font-size: 60px;
         margin: 0;
       }
 
-      /* LINKS INSIDE RECTANGLE */
       .hero-links {
         position: absolute;
         bottom: 60px;
-        left: 0;
-        right: 0;
+        width: 100%;
         text-align: center;
       }
 
       .hero-links a {
-        font-family: "Be Vietnam Pro", sans-serif;
+        font-family: "Be Vietnam Pro";
         font-weight: 700;
         font-size: 22px;
         text-decoration: none;
-        color: #000000;
+        color: black;
         margin: 0 25px;
       }
 
@@ -163,6 +140,7 @@
         color: #e4281f;
       }
 
+      /* ---------------- HEADERS ---------------- */
       h2 {
         color: #1c6139;
         font-family: "Poppins";
@@ -170,30 +148,61 @@
         text-align: center;
       }
 
-      .container {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        gap: 10px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .grid-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 20px;
-      }
-      
       h3 {
         font-family: "Be Vietnam Pro";
         font-size: 25px;
       }
-      
+
       p {
         font-family: "Be Vietnam Pro";
-        
+      }
+
+      /* ---------------- PRODUCTS GRID ---------------- */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  /* 3 cards per row */
+        gap: 40px;
+        margin: 0 auto 60px;
+        padding: 20px 0;
+      }
+
+      .grid-item {
+        border-radius: 25px;
+        border: 3px solid black;
+        box-shadow: 10px 10px black;
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      .grid-item img {
+        width: 100%;
+        display: block;
+        border-radius: 15px;
+        margin-bottom: 15px;
+      }
+
+      .grid-item h5 {
+        font-family: "Be Vietnam Pro";
+        margin: 5px 0 10px;
+      }
+
+      .add-to-cart {
+        border: 2px solid black;
+        background-color: #e4281f;
+        color: #fdedc9;
+        border-radius: 30px;
+        padding: 8px 18px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-size: 11px;
+        box-shadow: 7px 7px black;
+        cursor: pointer;
+      }
+      
+      .add-to-cart:hover {
+        color: #e4281f;
+        background-color: #fdedc9;
       }
 
       /* ---------------- FOOTER ---------------- */
@@ -266,6 +275,10 @@
         outline: none;
       }
 
+      .newsletter-input::placeholder {
+        color: black;
+      }
+
       .newsletter-button {
         position: absolute;
         background-color: #e4281f;
@@ -317,108 +330,112 @@
       </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div id="hero">
-      <img src="menu-hero-photo.jpeg" alt="Hero Image">
+      <img src="products-hero-photo.jpg" alt="Hero Image">
 
       <div class="hero-box">
-        <h1 class="hero-title">THE MENU</h1>
+        <h1 class="hero-title">THE PRODUCTS</h1>
+
         <div class="hero-links">
-          <a href="#tacos">TACOS</a>
-          <a href="#mains">MAINS</a>
           <a href="#drinks">DRINKS</a>
-          <a href="#dessert">DESSERTS</a>
+          <a href="#sauces">SAUCES</a>
+          <a href="#snacks">SNACKS</a>
         </div>
-      </div>
-    </div>
-
-    <!-- MENU -->
-    <!-- TACOS -->
-    <div id="tacos">
-      <h2>TACOS</h2>
-    </div>
-
-    <div class="container">
-      <!-- text LEFT, image RIGHT -->
-      <div class="grid-item">
-        <h3>Taco al Pastor</h3>
-        <p>Marinated pork, pineapple, cilantro, onion.</p>
-
-        <h3>Taco de Pollo</h3>
-        <p>Grilled chicken, lettuce, avocado crema.</p>
-
-        <h3>Taco de Nopales</h3>
-        <p>Cactus, cheese, salsa verde. (vegetarian)</p>
-      </div>
-
-      <div class="grid-item">
-        <img src="taco-menu.jpg" alt="taco on a white plate in a with lime, onions, cheese, meat, lettuce, tomato on a white background">
-      </div>
-    </div>
-
-    <!-- MAINS -->
-    <div id="mains">
-      <h2>MAINS</h2>
-    </div>
-
-    <div class="container">
-      <!-- image LEFT, text RIGHT -->
-      <div class="grid-item">
-        <img src="main-menu.jpg" alt="beans, lettuce, onions, burrito, and tomato sauce on a plate in a white background">
-      </div>
-
-      <div class="grid-item">
-        <h3>Enchiladas Verdes</h3>
-        <p>Corn tortillas with shredded chicken, tomatillo sauce, cheese.</p>
-
-        <h3>Burrito Bowl</h3>
-        <p>Rice, beans, pico de gallo, guacamole, choice of protein.</p>
-
-        <h3>Chiles Rellenos</h3>
-        <p>Poblano peppers stuffed with cheese and tomato sauce.</p>
       </div>
     </div>
 
     <!-- DRINKS -->
     <div id="drinks">
       <h2>DRINKS</h2>
+
+      <div class="container">
+        <div class="grid-item">
+          <img src="spicy-mango tropical-drink.jpg
+" alt="mango drink">
+          <h3>SPICY TROPICAL MANGO</h3>
+          <h5>$10.00</h5>
+          <p>A blend of sweet mango and tropical fruit with a hint of chili heat.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+
+        <div class="grid-item">
+          <img src="sol-fizz.jpg" alt="sol fizz">
+          <h3>SOL FIZZ</h3>
+          <h5>$12.00</h5>
+          <p>Sparkling citrus soda with hints of lime and orange.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+
+        <div class="grid-item">
+          <img src="fresa-rosa-splash.jpg" alt="roja">
+          <h3>FRESH ROJA SPLASH</h3>
+          <h5>$10.99</h5>
+          <p>Strawberry and hibiscus iced drink with crushed ice and a sweet floral finish.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+      </div>
     </div>
 
-    <div class="container">
-      <!-- text LEFT, image RIGHT -->
-      <div class="grid-item">
-        <h3>Rosa del Cielo</h3>
-        <p>A pink drink made with hibiscus, strawberry, and a splash of coconut water.</p>
+    <!-- SAUCES -->
+    <div id="sauces">
+      <h2>SAUCES</h2>
 
-        <h3>Spicy Mango Tropical Drink</h3>
-        <p>A bright blend of mango, lime, and a touch of chili sugar. Sweet, refreshing, and slightly spicy.</p>
+      <div class="container">
+        <div class="grid-item">
+          <img src="chamoy-sauce.jpg" alt="sauce">
+          <h3>CHAMOY SAUCE</h3>
+          <h5>$11.99</h5>
+          <p>A sweet, sour, and spicy Mexican-style sauce made from fruit, chili, and lime.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
 
-        <h3>Verde Vital</h3>
-        <p>Refreshing green blend: lime, honeydew, mint, and a touch of aloe vera.</p>
-      </div>
+        <div class="grid-item">
+          <img src="chipotle-oro.jpg" alt="chipotle oro">
+          <h3>CHIPOTLE ORO</h3>
+          <h5>$15.00</h5>
+          <p>Golden chipotle sauce mixed with honey, smoked paprika, and garlic.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
 
-      <div class="grid-item">
-        <img src="drink-menu.jpg" alt="pink drink with strawberrys on top in a glass on a white background">
+        <div class="grid-item">
+          <img src="verde-fuego.jpg" alt="verde fuego">
+          <h3>VERDE FUEGO</h3>
+          <h5>$12.99</h5>
+          <p>Bright green tomatillo-lime sauce with jalapeño, cilantro, and a citrus kick.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
       </div>
     </div>
 
-    <!-- DESSERTS -->
-    <div id="desserts">
-      <h2>DESSERTS</h2>
-    </div>
+    <!-- SNACKS -->
+    <div id="snacks">
+      <h2>SNACKS</h2>
 
-    <div class="container">
-      <!-- image LEFT, text RIGHT -->
-      <div class="grid-item">
-        <img src="dessert-menu.jpg" alt="caramel custard on a white plate with brown sugar sauce and carrot shavings on top on a white background">
-      </div>
+      <div class="container">
+        <div class="grid-item">
+          <img src="mango-loco-bites.jpg" alt="loco bites">
+          <h3>MANGO LOCO BITES</h3>
+          <h5>$7.99</h5>
+          <p>Chewy mango pieces dusted with tangy chamoy sugar.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
 
-      <div class="grid-item">
-        <h3>Fiesta Crunch Mix</h3>
-        <p>Crispy corn bites, toasted tortilla strips, chili-lime peanuts, and sweet mango chips tossed in our signature fuego seasoning. Hits with a mix of salty, spicy, and sweetness.</p>
+        <div class="grid-item">
+          <img src="chili-crunch-churro-chips.jpg" alt="chili chips">
+          <h3>CHILI CHURRO CHIPS</h3>
+          <h5>$5.99</h5>
+          <p>Thin churro-style chips with cinnamon heat and a spicy caramel glaze.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
 
-        <h3>Dulce de Sol</h3>
-        <p>A warm cinnamon-vanilla custard topped with caramelized orange zest and a sprinkle of chili sugar. Sweet, creamy, and lightly spiced.</p>
+        <div class="grid-item">
+          <img src="fiesta-crunch-mix.jpg" alt="crunch mix">
+          <h3>FIESTA CRUNCH MIX</h3>
+          <h5>$7.99</h5>
+          <p>A salty, sweet, spicy mix of corn bites, tortilla strips, peanuts, and jalapeño chips.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
       </div>
     </div>
 
@@ -429,7 +446,6 @@
       </div>
 
       <div class="footer-columns">
-
         <div class="footer-column">
           <h4>LOCATION</h4>
           <p>218 Maple Crest Road</p>
@@ -457,7 +473,6 @@
           <a href="#">Cart</a><br>
           <a href="#">About</a>
         </div>
-
       </div>
 
       <div class="footer-newsletter-title">JOIN OUR NEWSLETTER!</div>
